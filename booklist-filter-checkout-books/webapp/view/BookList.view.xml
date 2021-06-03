@@ -1,0 +1,113 @@
+<mvc:View
+	controllerName="org.ubb.books.controller.Book"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	height="100%"
+	>
+	<m:Page
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding">
+
+		<m:content>
+
+			<Table id="table1"
+				rows="{/Z801_JOIN_CBOOKS_MMSet}"
+				selectionMode="None"
+				enableCellFilter="{ui>/cellFilterOn}"
+				>
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Checked books"/>
+						<m:ToolbarSpacer/>
+						
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+				<Column width="11rem"
+					filterProperty="FirstName"
+					sortProperty="FirstName"
+					defaultFilterOperator="StartsWith">
+						<m:Label text="FirstName" />
+						<template>
+							<m:Label text="{FirstName}" />
+						</template>
+					</Column>
+					<Column width="8rem"
+					filterProperty="LastName"
+					sortProperty="LastName"
+					defaultFilterOperator="StartsWith">
+						<m:Label text="Last name" />
+							<template>
+							<m:Label text="{LastName}" />
+						</template>
+					</Column>
+					<Column width="9rem">
+						<m:Label text="Username" />
+						<template>
+							<m:Label text="{Username}" />
+						</template>
+					</Column>
+					<Column width="8rem">
+						<m:Label text="Date Checkout " />
+							<template>
+							<m:Label text="{
+								path: 'DateCheckout',
+								formatter : '.formatDate'
+							
+							}" />
+						</template>
+					</Column>
+					<Column width="8rem">
+						<m:Label text="Date Return " />
+							<template>
+							<m:Label text="{
+								path: 'DateReturn',
+								formatter : '.formatDate'
+								}" />
+						</template>
+					</Column>
+					<Column width="8rem">
+						<m:Label text="ISBN" />
+						<template>
+							<m:Label text="{Isbn}" />
+						</template>
+					</Column>
+
+					<Column width="11rem"
+					filterProperty="Author"
+					sortProperty="Author"
+					defaultFilterOperator="StartsWith">
+						<m:Label text="Author" />
+						<template>
+							<m:Label text="{Author}" />
+						</template>
+					</Column>
+					<Column width="11rem"
+					filterProperty="Title"
+					sortProperty="Title"
+					defaultFilterOperator="StartsWith"
+					>
+						<m:Label text="Title"/>
+						<template>
+							<m:Label text="{Title}" />
+						</template>
+					</Column>
+	
+				</columns>
+
+				<footer>
+					<m:OverflowToolbar id="infobar"></m:OverflowToolbar>
+
+				</footer>
+			</Table>
+
+		</m:content>
+
+
+	</m:Page>
+</mvc:View>
+
